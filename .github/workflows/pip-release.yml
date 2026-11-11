@@ -311,7 +311,7 @@ jobs:
       # before replacing `password:` with the OIDC id-token permission.
       - name: Publish to TestPyPI (dry-run target)
         if: github.event_name == 'workflow_dispatch' && inputs.publish_to == 'testpypi'
-        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
         with:
           repository-url: https://test.pypi.org/legacy/
           password: ${{ secrets.TESTPYPI_API_TOKEN }}
@@ -321,7 +321,7 @@ jobs:
         if: |
           startsWith(github.ref, 'refs/tags/v2.') ||
           (github.event_name == 'workflow_dispatch' && inputs.publish_to == 'pypi')
-        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           packages-dir: dist
@@ -347,7 +347,7 @@ jobs:
       # before replacing `password:` with the OIDC id-token permission.
       - name: Publish to TestPyPI (dry-run target)
         if: github.event_name == 'workflow_dispatch' && inputs.publish_to == 'testpypi'
-        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
         with:
           repository-url: https://test.pypi.org/legacy/
           password: ${{ secrets.TESTPYPI_API_TOKEN }}
@@ -357,7 +357,7 @@ jobs:
         if: |
           startsWith(github.ref, 'refs/tags/v1.99') ||
           (github.event_name == 'workflow_dispatch' && inputs.publish_to == 'pypi')
-        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           packages-dir: dist
